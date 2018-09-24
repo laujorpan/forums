@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  form(action="/login", method="post", class="form-signin text-center")
+    img.mb-4(src='https://getbootstrap.com/assets/brand/bootstrap-solid.svg', alt='', width='72', height='72')
+    h1.h3.mb-3.font-weight-normal Go to forums
+    .form-group
+      input(type="text", name="nickname", class="form-control",  placeholder="Nickname", required='required', autofocus='autofocus')
+    button(type="submit", class="btn btm-lg btn-default btn-block") Sign in

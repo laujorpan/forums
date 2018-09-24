@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    title= 'Forums'
+    meta(charset="utf-8")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+  body
+    .navbar.navbar-expand-lg.navbar-toggleable-md.navbar-dark.bg-dark
+      a(class='navbar-brand' href='#') Forums
+      button(class='navbar-toggler navbar-toggler-right' type='button' data-toggle='collapse' data-target='#navbarContent' aria-controls='navbarContent' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      div(class='collapse navbar-collapse justify-content-end' id='navbarContent')
+        ul.navbar-nav
+          li.nav-item.active
+            a(class='nav-link' href='_blank') Home
+          li.nav-item.dropdown
+            a(class='nav-link dropdown-toggle' href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Channels 
+              span(class="caret")
+            .dropdown-menu(aria-labelledby="navbarDropdown")
+              a.dropdown-item(href="#") General forum
+              a.dropdown-item(href="#") Rocket league
+              a.dropdown-item(href="#") Overcooked
+          li.nav-item
+            a(class='nav-link' href='_blank') Private Chats
+          li.nav-item
+            a(class='nav-link' href='_blank') About
+          li.nav-item
+            a(class='nav-link' href='_blank') Contact
+  
+    .container-fluid.h-100
+      div(class='row justify-content-center align-items-center main-container')
+        block content
+
+    script(src='/javascripts/jquery.min.js')
+    script(src='/javascripts/bootstrap.min.js')
