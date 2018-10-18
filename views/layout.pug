@@ -5,6 +5,7 @@ html
     meta(charset="utf-8")
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/sticky-footer.css')
   body
     .navbar.navbar-expand-lg.navbar-toggleable-md.navbar-dark.bg-dark
       a(class='navbar-brand' href='#') Forums
@@ -22,15 +23,19 @@ html
               a.dropdown-item(href="#") Rocket league
               a.dropdown-item(href="#") Overcooked
           li.nav-item
-            a(class='nav-link' href='_blank') Private Chats
+            a(class='nav-link disabled' href='_blank') Private Chats
           li.nav-item
-            a(class='nav-link' href='_blank') About
+            a(class='nav-link disabled' href='_blank') About
           li.nav-item
-            a(class='nav-link' href='_blank') Contact
+            a(class='nav-link' href='/logout') Log out
   
     .container-fluid.h-100
       div(class='row justify-content-center align-items-center main-container')
         block content
+
+    footer.footer
+      .container(style='display:none')
+        span.text-muted(id='footerText') #{loggedUserMessage}
 
     script(src='/javascripts/jquery.min.js')
     script(src='/javascripts/bootstrap.min.js')

@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 //add middleware to manage sessions
 const cookieSession = require('./middlewares/cookie-session');
+const auth = require('./middlewares/auth');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -25,6 +26,9 @@ app.use(cookieSession)
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+
+app.use(auth);
+
 app.use('/users', usersRouter);
 app.use('/forums', forumsRouter);
 
