@@ -1,10 +1,13 @@
 var express = require('express');
 var router = express.Router();
 
-let loggedUserMessage = ""
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', {loggedUserMessage});
+  if(!res.locals.user){
+    res.render('index');
+  }else{
+    res.redirect('/forums');
+  }
 });
 
 /* POST login - home page. */
